@@ -36,11 +36,10 @@ def call(body) {
                                 def pom = readMavenPom file: 'pom.xml'
                                 project = pom.artifactId
                                 def versionPrefix = config.VERSION_PREFIX ?: "1.4"
-                                int version_last = 3
-                                //int version_last = sh(
-                                //        script: "git tag | awk -F. 'BEGIN {print \"-1\"} /v${versionPrefix}/{print \$3}' | sort -g  | tail -1",
-                                //        returnStdout: true
-                                //)
+                                int version_last = sh(
+                                        script: "git tag | awk -F. 'BEGIN {print \"-1\"} /v${versionPrefix}/{print \$3}' | sort -g  | tail -1",
+                                        returnStdout: true
+                                )
                                 buildVersion = "${versionPrefix}.${version_last + 1}"
                                 currentBuild.displayName = "${buildVersion}"
                             }

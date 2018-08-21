@@ -27,9 +27,8 @@ def call(body) {
                         secretVolume(secretName: 'digitaldealer-service-secret', mountPath: '/etc/secrets/service-secret')
                 ])
                 {
-
-                    //mavenNode(mavenImage: 'stakater/maven-centos:7-1.8-3.5.4') {
-                    mavenNode(mavenImage: 'jenkinsxio/builder-maven:0.0.435') {
+                    mavenNode(mavenImage: 'stakater/maven-centos:7-1.8-3.5.4') {
+                    //mavenNode(mavenImage: 'jenkinsxio/builder-maven:0.0.435') {
                         container(name: 'maven') {
 
                             stage("checkout") {

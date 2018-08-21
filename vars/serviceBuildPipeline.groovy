@@ -28,7 +28,8 @@ def call(body) {
                 ])
                 {
 
-                    mavenNode(mavenImage: 'stakater/maven-centos:7-1.8-3.5.4') {
+                    //mavenNode(mavenImage: 'stakater/maven-centos:7-1.8-3.5.4') {
+                    mavenNode(mavenImage: 'jenkinsxio/builder-maven:0.0.435') {
                         container(name: 'maven') {
 
                             stage("checkout") {

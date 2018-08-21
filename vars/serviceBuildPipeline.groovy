@@ -32,6 +32,7 @@ def call(body) {
                         container(name: 'maven') {
 
                             stage("checkout") {
+                                sh "mvn version"
                                 scmVars = checkout scm
                                 def pom = readMavenPom file: 'pom.xml'
                                 project = pom.artifactId

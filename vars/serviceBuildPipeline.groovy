@@ -28,7 +28,7 @@ def call(body) {
                 ])
                 {
 
-                    mavenNode(mavenImage: 'maven:3.5-jdk-8') {
+                    mavenNode(mavenImage: 'stakater/maven-centos:7-1.8-3.5.4') {
                         container(name: 'maven') {
 
                             stage("checkout") {
